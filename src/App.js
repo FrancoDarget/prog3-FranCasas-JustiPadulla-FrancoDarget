@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Article from './components/Article/Article';
+import Articles from './components/Articles/Articles';
 
 function App() {
   return (
@@ -11,15 +11,8 @@ function App() {
     <div className="botonVerMas">
     <button type="button">Cargar más tarjetas</button>
     </div>
-    <section className='card-container'>
-    <Article />
-    <Article />
-    <Article />
-    <Article />
-    <Article />
-    <Article />
-    <Article />
-    <Article />
+    <section>
+    <Articles />
     </section>
     </main>
     <Footer />
