@@ -17,8 +17,10 @@ evitarEnviar(evento) {
 controlarCambios(event){
     this.setState ({
         filterBy: event.target.value,
-    })
-    this.props.filtrar(this.state.filterBy)
+    },
+    () => this.props.filtrar(this.state.filterBy)
+    )
+
 }
   render() {
       return (
