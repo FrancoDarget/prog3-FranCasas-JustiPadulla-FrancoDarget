@@ -1,0 +1,60 @@
+article{
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: 1px solid black;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+section.navigation{
+    display: flex;
+    justify-content: space-between;
+}
+
+section .fa-chevron-left{
+    border: 1px solid black;
+    padding: 10px
+}
+
+section .fa-chevron-right{
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: 2px;
+}
+
+section .fa-window-close{
+    display: flex;
+    align-items: center;
+}
+
+h3{
+width: 100%;
+}
+
+img{
+    width: 100%;
+    margin-top: 20px;
+}
+
+section .aditional-info{
+    background-color: lightgray;
+}
+
+.infoAdicional{
+    font-weight: bold;
+}
+
+.botonInfoAdicional{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.botonInfoAdicional a{
+    padding: 10px;
+    color: #e50914;
+    text-decoration: none;
+    font-size: 15px;
+}
