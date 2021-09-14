@@ -24,7 +24,7 @@ class Article extends Component {
             <section className="aditional-info">
                 <p><span className="infoAdicional">Popularidad: </span>{this.props.dataPelicula.popularity}</p>
                 <p><span className="infoAdicional">Fecha de lanzamiento: </span>{this.props.dataPelicula.release_date}</p>
-                <p><span className="infoAdicional">Genero: </span>{this.props.dataPelicula.genre_ids}</p>
+                <p><span className="infoAdicional">Lenguaje: </span>{this.props.dataPelicula.original_language}</p>
             </section>
             <div className='botonInfoAdicional'>
             <a href="">Ver más</a>

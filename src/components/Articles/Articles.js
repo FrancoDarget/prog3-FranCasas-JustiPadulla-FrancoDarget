@@ -9,7 +9,7 @@ class Articles extends Component {constructor(props) {
         peliculas : [],
         isLoaded: false,
         peliculasOg : [],
-
+        nextUrl:1,
     }
 }
 
@@ -19,10 +19,26 @@ componentDidMount() {
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        this.setState({peliculas: data.results, isLoaded: true, peliculasOg: data.results})
+        this.setState({peliculas: data.results, isLoaded: true, peliculasOg: data.results, nextUrl:this.state.nextUrl+1})
     })
     .catch(e => console.log(e))
 }
+addMore(){
+    //busco en la api
+    let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=c57f4aacd06596fc7da4af9f1a6e8489&page=" + this.state.nextUrl
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        this.setState({
+          
+            peliculas: this.state.peliculas.concat(data.results)
+        })
+    })
+    .catch(e => console.log(e))
+    //los sumo al array inicial
+    
+    }
 
 filtrarPeli (PeliaFiltrar) {
     //Utilizamos el buscador para filtrar los articles que busquemos con el formulario
@@ -34,6 +50,7 @@ filtrarPeli (PeliaFiltrar) {
     })
     //Esta funcion va a ser ejecutada dentro del Formulario
 }
+
 
 render() {
   return (
@@ -47,6 +64,7 @@ render() {
         <p>Cargando...</p> :
         this.state.peliculas.map((pelicula, idx)  => <Article key= {pelicula.name + idx} dataPelicula= {pelicula} />
              ) }
+             <button onClick={()=>this.addMore()}> Cargar Más Peliculas </button>
       </div>
       </React.Fragment>
 );
