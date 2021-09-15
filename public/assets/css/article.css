@@ -49,9 +49,9 @@ section .aditional-info{
     display: flex;
     justify-content: center;
     position: relative;
-    top: -350px;
+    top: -32%;
 }
 
 .botonInfoAdicional img{
-    max-width: 30px;
+    max-width: 50px;
 }

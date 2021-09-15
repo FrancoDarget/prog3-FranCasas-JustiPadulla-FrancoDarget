@@ -11,12 +11,12 @@ class Article extends Component {
       return (
     <article>
         <section className="navigation">
-            <img src='https://cdn-icons-png.flaticon.com/512/463/463612.png'/>
+            <img src='/assets/img/eliminar.png.png'/>
         </section>
         <main>
             <img src= {`https://image.tmdb.org/t/p/w342/${this.props.dataPelicula.poster_path}`} alt=""/>
             <div className='botonInfoAdicional'>
-            <a href=""><img src='https://cdn-icons-png.flaticon.com/512/148/148764.png'/></a>
+            <a href=""><img src='/assets/img/info.png.png'/></a>
             </div>
             <h3>{this.props.dataPelicula.title}</h3>
             <section className="aditional-info">
