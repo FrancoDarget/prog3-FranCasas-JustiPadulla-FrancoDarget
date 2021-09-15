@@ -11,24 +11,20 @@ class Article extends Component {
       return (
     <article>
         <section className="navigation">
-            <div>
-                <i className="fas fa-chevron-left"></i>
-                <i className="fas fa-chevron-right"></i>
-            </div>
-            <i className="far fa-window-close"></i>
+            <img src='https://cdn-icons-png.flaticon.com/512/463/463612.png'/>
         </section>
         <main>
             <img src= {`https://image.tmdb.org/t/p/w342/${this.props.dataPelicula.poster_path}`} alt=""/>
+            <div className='botonInfoAdicional'>
+            <a href=""><img src='https://cdn-icons-png.flaticon.com/512/148/148764.png'/></a>
+            </div>
             <h3>{this.props.dataPelicula.title}</h3>
-            <p className="description">{this.props.dataPelicula.overview}</p>
             <section className="aditional-info">
+                <p className="description">{this.props.dataPelicula.overview}</p>
                 <p><span className="infoAdicional">Popularidad: </span>{this.props.dataPelicula.popularity}</p>
                 <p><span className="infoAdicional">Fecha de lanzamiento: </span>{this.props.dataPelicula.release_date}</p>
                 <p><span className="infoAdicional">Lenguaje: </span>{this.props.dataPelicula.original_language}</p>
             </section>
-            <div className='botonInfoAdicional'>
-            <a href="">Ver más</a>
-            </div>
         </main>
     </article>
 );
