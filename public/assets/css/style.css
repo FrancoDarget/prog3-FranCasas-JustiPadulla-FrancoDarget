@@ -6,6 +6,102 @@ body{
     color: white;
 }
 
+/* Hero */
+
+.hero{
+    height: 100vh;
+    width: 100%;
+    background-image: url('/assets/img/control.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    margin:0px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero h1{
+    font-family: helvetica;
+    color: white;
+    font-size: 4rem;
+    /*line-height: 96px;*/
+    font-weight: bold;
+    text-align: center;
+    width: 85%;
+    
+  }
+  
+  .hero a{
+    color: lightgrey;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    margin-top: 20px;
+  }
+  
+  .hero p{
+    font-weight: lighter;
+  }
+  
+  .hero button{
+    color: white;
+    background-color: rgb(252,0,5);
+    border-radius: 30px;
+    border: none;
+    padding: 14px 0;
+    width: 225px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 0px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+  }
+  
+  button:hover{
+    color: rgb(252,0,5);
+    background-color: white;
+  }
+  
+  .hero p{
+    color: lightgrey;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    position: relative;
+    top: 60px;
+  }
+  
+  @keyframes downarrow {
+          0%   { transform: translateY(0); }
+          50%  { transform: translateY(-40%); }
+          100% { transform: translateY(0px); }
+      }
+  
+  .hero img{
+    max-width: 80px;
+    max-height: 50px;
+    position: relative;
+    top: 10%;
+    animation-name:downarrow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+
+  .hero .uk-button-primary{
+      background-color: rgba(0,0,0,0)!important;
+      
+  }
+
+  .hero .scrolling{
+    position: absolute;
+    bottom: 30px;
+  }
+
+  /* Hero */
+
 main{
 width: 100%;
 display: flex;

@@ -21,6 +21,7 @@ class Article extends Component {
             <h3>{this.props.dataPelicula.title}</h3>
             <section className="aditional-info">
                 <p className="description">{this.props.dataPelicula.overview}</p>
+                <br/>
                 <p><span className="infoAdicional">Popularidad: </span>{this.props.dataPelicula.popularity}</p>
                 <p><span className="infoAdicional">Fecha de lanzamiento: </span>{this.props.dataPelicula.release_date}</p>
                 <p><span className="infoAdicional">Lenguaje: </span>{this.props.dataPelicula.original_language}</p>

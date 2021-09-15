@@ -7,10 +7,15 @@ function App() {
   return (
   <React.Fragment>
     <Header />
-    <main>
-    <div className="botonVerMas">
-    <button type="button">Cargar más tarjetas</button>
+    <div className='hero'>
+      <h1>The Lasrgest Streaming Library<br/>in Latin America</h1>
+      <div className='scrolling'>
+      <p>Scroll for more</p>
+      <br/><br/><br/>
+      <a class="uk-button uk-button-primary"  href="#postal" offset='100' uk-scroll><img src="/assets/img/downarrow.png" alt=""/></a>
+      </div>
     </div>
+    <main id="postal">
     <section>
     <Articles />
     </section>

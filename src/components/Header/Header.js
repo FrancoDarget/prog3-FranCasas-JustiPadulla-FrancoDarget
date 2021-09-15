@@ -5,13 +5,10 @@ function Header() {
   return (
 
 <header>
-<h1 className="titulo">Playit</h1>
-<section>
-    <p>Ordenar ASC/ DESC</p>
-    <i className="fas fa-th"></i>
-    <i className="fas fa-align-justify"></i>
-    <Formulario/>
-</section>
+<div className='logo'>
+<img src="/assets/img/ultimoplay.png"/>
+</div>
+
 </header>
 );
 }

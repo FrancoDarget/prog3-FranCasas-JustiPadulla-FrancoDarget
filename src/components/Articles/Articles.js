@@ -55,8 +55,14 @@ filtrarPeli (PeliaFiltrar) {
 render() {
   return (
       <React.Fragment>
-<div>
+<div className="filtrados">
     <Formulario filtrar= { (texto) => this.filtrarPeli (texto)}  />
+    <section>
+    <p>Ordenar ASC / DESC</p>
+    <i className="fas fa-th"></i>
+    <i className="fas fa-align-justify"></i>
+    
+</section>
 </div>
       <div className='card-container'> 
             {
