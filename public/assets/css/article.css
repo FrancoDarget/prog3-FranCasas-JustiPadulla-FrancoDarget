@@ -56,3 +56,9 @@ section .aditional-info{
 .botonInfoAdicional img{
     max-width: 50px;
 }
+.show{
+    display: block;
+}
+.hide{
+    display:none;
+}
