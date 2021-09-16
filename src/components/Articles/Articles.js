@@ -40,6 +40,13 @@ addMore(){
     
     }
 
+    deleteCard(peliaBorrar){
+        let pelisQueQuedan = this.state.peliculas.filter(pelicula=>pelicula.id!==peliaBorrar)
+        this.setState({
+            peliculas:pelisQueQuedan
+        })
+    }
+
 filtrarPeli (PeliaFiltrar) {
     //Utilizamos el buscador para filtrar los articles que busquemos con el formulario
     let peliculasBuscadas = this.state.peliculasOg.filter ( pelicula => pelicula.title.toLowerCase().includes(PeliaFiltrar.toLowerCase()))
@@ -68,8 +75,8 @@ render() {
             {
         this.state.isLoaded === false ?
         <p>Cargando...</p> :
-        this.state.peliculas.map((pelicula, idx)  => <Article key= {pelicula.name + idx} dataPelicula= {pelicula} />
-             ) }
+        this.state.peliculas.map((pelicula, idx)  => <Article key= {pelicula.name + idx} dataPelicula= {pelicula} 
+          remove={(peliaBorrar)=>this.deleteCard(peliaBorrar)} /> )}
              <button onClick={()=>this.addMore()}> Cargar Más Peliculas </button>
       </div>
       </React.Fragment>

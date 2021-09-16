@@ -10,7 +10,7 @@ class Article extends Component {
   render() {
       return (
     <article>
-        <section className="navigation">
+        <section className="navigation" onClick={()=>this.props.remove(this.props.dataPelicula.id)}>
             <img src='/assets/img/eliminar.png.png'/>
         </section>
         <main>
@@ -25,6 +25,7 @@ class Article extends Component {
                 <p><span className="infoAdicional">Popularidad: </span>{this.props.dataPelicula.popularity}</p>
                 <p><span className="infoAdicional">Fecha de lanzamiento: </span>{this.props.dataPelicula.release_date}</p>
                 <p><span className="infoAdicional">Lenguaje: </span>{this.props.dataPelicula.original_language}</p>
+                
             </section>
         </main>
     </article>
