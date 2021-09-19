@@ -13,12 +13,12 @@ class Article extends Component {
     viewMore(){
         if(this.state.viewMore === true){
          this.setState({
-            text:'ver menos',
+            text:'ver mas',
             viewMore: false,
          })
         } else{
             this.setState({
-            text:'ver mas',
+            text:'ver menos',
             viewMore: true,
         })}
     }
@@ -31,7 +31,7 @@ class Article extends Component {
         </section>
         <main>
             <img src= {`https://image.tmdb.org/t/p/w342/${this.props.dataPelicula.poster_path}`} alt=""/>
-            <div className='botonInfoAdicional'onClick={()=>this.viewMore()}>
+            <div className='botonInfoAdicional'>
             <a href=""><img src='/assets/img/info.png.png'/></a>
             </div>
             <h3>{this.props.dataPelicula.title}</h3>
@@ -41,7 +41,7 @@ class Article extends Component {
                 <p className={`extra ${this.state.viewMore?'show':'hide'}`}><span className={`extra ${this.state.viewMore?'show':'hide'}`}>Popularidad: </span>{this.props.dataPelicula.popularity}</p>
                 <p className={`extra ${this.state.viewMore?'show':'hide'}`}><span className={`extra ${this.state.viewMore?'show':'hide'}`}>Fecha de lanzamiento: </span>{this.props.dataPelicula.release_date}</p>
                 <p className={`extra ${this.state.viewMore?'show':'hide'}`}><span className={`extra ${this.state.viewMore?'show':'hide'}`}>Lenguaje: </span>{this.props.dataPelicula.original_language}</p>
-                
+                <p onClick={()=>this.viewMore()}>{this.state.text}</p>
             </section>
         </main>
     </article>
