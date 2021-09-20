@@ -27,7 +27,7 @@ class Article extends Component {
       return (
     <article className={`${this.props.formato=="grid" ? "formatoGrid": "formatoRow"}`} >
     {/* <article className={`${this.props.orientacion=="grid:" ? "formatoGrid": "formatoRow"}`} ></article> */}
-        <section className="navigation" onClick={()=>this.props.remove(this.props.dataPelicula.id)}>
+        <section className="navigation" onClick={()=>this.props.deleteCard(this.props.dataPelicula.id)}>
             <img src='/assets/img/eliminar.png.png'/>
         </section>
         <main>

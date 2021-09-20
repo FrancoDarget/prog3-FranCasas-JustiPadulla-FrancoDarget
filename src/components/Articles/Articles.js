@@ -92,7 +92,7 @@ render() {
         this.state.isLoaded === false ?
         <div className="lds-dual-ring"></div> :
         this.state.peliculas.map((pelicula, idx)  => <Article key= {pelicula.name + idx} dataPelicula= {pelicula} 
-          remove={(peliaBorrar)=>this.deleteCard(peliaBorrar)} 
+          deleteCard={(peliaBorrar)=>this.deleteCard(peliaBorrar)} 
           formato = {this.state.orden}
           /> )}
              <button className="cargarMasPeliculas" onClick={()=>this.addMore()}> Cargar Más Peliculas </button>
