@@ -31,6 +31,7 @@ class Article extends Component {
             <img src='/assets/img/eliminar.png.png'/>
         </section>
         <main>
+            {/*Utilizo toda la informacion proporcionada de la API al utilizar this.props.dataPelicula */}
             <img src= {`https://image.tmdb.org/t/p/w342/${this.props.dataPelicula.poster_path}`} alt=""/>
             <h3>{this.props.dataPelicula.title}</h3>
             <section className="aditional-info">

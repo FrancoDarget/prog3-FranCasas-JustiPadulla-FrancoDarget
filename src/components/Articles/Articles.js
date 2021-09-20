@@ -21,7 +21,6 @@ class Articles extends Component {constructor(props) {
 //Inmediantamente aparece el componentDidMount(), siempre despues del primer renderizado. Aca hacemos los llamados asincronico de APIs, cambia el contenido y obliga que el componente se vuelva a renderizar.
 //Al actualizar el componente se utiliza componentDidUpdate(), espera que se actualiza el componente. Cuando sufre un cambio de estado, la primera linea no se ejecuta en el renderizado. Este metodo puede recibir dos parametros (prevProps) y (prevState), se utiliza para funciones de busqueda.
 //componentWillUnmount() se invoca antes de desmontar y destruir un componente. Tambien, se utiliza para detener contadores.
-
 //El ComponentDidMount llamos a la API, lo primero que se ejecuta despues del renderizado
 componentDidMount() {
     let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=c57f4aacd06596fc7da4af9f1a6e8489"
@@ -119,21 +118,23 @@ render() {
     </section>
 </div>
       <div className='card-container'> 
-            {
+            
       {/* Al renderizar puede tardar un poco, entonces utilizo un if ternario. Si lo que hay dentro de Articles esta vacio (no hay peliculas porque la API no cargo)
  imprimime un gif que es un Loader, sino imprimime las peliculas con sus correspondientes Datos 
  Retornamos el loader o el bloque con las peliculas */}
+ {
       this.state.isLoaded === false ?
         <div className="lds-dual-ring"></div> :
-         {/* Si ya cargo la API, voy a mostrar la informacion,
+        this.state.peliculas.map((pelicula, idx) => <Article key= {pelicula.name + idx} dataPelicula= {pelicula} 
+          deleteCard={(peliaBorrar)=>this.deleteCard(peliaBorrar)} 
+          formato = {this.state.orden}
+          /> )
+ }
+           {/* Si ya cargo la API, voy a mostrar la informacion,
         utilizo un map que recibe el array peliculas y genera un bucle que imprime todas las peliculas que encuentre dentro del objeto peliculas
         Selecciono una pelicula y le paso toda la informacion de determinada pelicula, el dataPelicula le pasa toda la informacion y ya tiene en el props de Article toda la data
         donde podemos utilizar dataPelicula.popularity para saber la popularidad de la pelicula por ejemplo.
     */}
-        this.state.peliculas.map((pelicula, idx)  => <Article key= {pelicula.name + idx} dataPelicula= {pelicula} 
-          deleteCard={(peliaBorrar)=>this.deleteCard(peliaBorrar)} 
-          formato = {this.state.orden}
-          /> )}
              <button className="cargarMasPeliculas" onClick={()=>this.addMore()}> Cargar Más Peliculas </button>
       </div>
       {/* <Articles orientacion = {this.state.orden}/> */}

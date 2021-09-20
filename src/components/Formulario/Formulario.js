@@ -24,7 +24,6 @@ controlarCambios(event){
 }
   render() {
       return (
-    
 <form action="" onSubmit={(eventoEnviar) => this.evitarEnviar(eventoEnviar)}>
         <input type="text" onChange={(eventoValor)=> this.controlarCambios(eventoValor) } value={this.state.filterBy} name="search" id="" placeholder="Search"/>
         <button type="submit"><i class="fas fa-search"></i></button>
