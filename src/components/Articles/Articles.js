@@ -10,7 +10,7 @@ class Articles extends Component {constructor(props) {
         isLoaded: false,
         peliculasOg : [],
         nextUrl:1,
-        // orden: "grid",
+        orden: "grid",
     }
 }
 
@@ -61,17 +61,17 @@ filtrarPeli (PeliaFiltrar) {
 }
 
 
-// grid(){
-//     this.setState({
-//         orden: "grid",
-//     })
-// }
+grid(){
+    this.setState({
+        orden: "grid",
+    })
+}
 
-// row(){
-//     this.setState({
-//         orden: "row",
-//     })
-// }
+row(){
+    this.setState({
+        orden: "row",
+    })
+}
 
 
 render() {
@@ -81,18 +81,20 @@ render() {
     <Formulario filtrar= { (texto) => this.filtrarPeli (texto)}  />
     <section>
         <p>Ordenar ASC / DESC</p>
-        {/* <div className= {`${this.state.orden=="grid:" ? "formatoGrid": "formatoRow"}`}> */}
+        <div className= "">
             <i className="fas fa-th" onClick = {()=>this.grid()}></i>
             <i className="fas fa-align-justify" onClick = {()=>this.row()}></i>
-        {/* </div> */}
+        </div>
     </section>
 </div>
       <div className='card-container'> 
             {
         this.state.isLoaded === false ?
-        <img src='/assets/img/loader.gif'></img> :
+        <div className="lds-dual-ring"></div> :
         this.state.peliculas.map((pelicula, idx)  => <Article key= {pelicula.name + idx} dataPelicula= {pelicula} 
-          remove={(peliaBorrar)=>this.deleteCard(peliaBorrar)} /> )}
+          remove={(peliaBorrar)=>this.deleteCard(peliaBorrar)} 
+          formato = {this.state.orden}
+          /> )}
              <button className="cargarMasPeliculas" onClick={()=>this.addMore()}> Cargar Más Peliculas </button>
       </div>
       {/* <Articles orientacion = {this.state.orden}/> */}
