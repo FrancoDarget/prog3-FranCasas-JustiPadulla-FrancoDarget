@@ -25,23 +25,21 @@ class Article extends Component {
 
   render() {
       return (
-    <article>
+    <article className="formatoGrid" >
+    {/* <article className={`${this.props.orientacion=="grid:" ? "formatoGrid": "formatoRow"}`} ></article> */}
         <section className="navigation" onClick={()=>this.props.remove(this.props.dataPelicula.id)}>
             <img src='/assets/img/eliminar.png.png'/>
         </section>
         <main>
             <img src= {`https://image.tmdb.org/t/p/w342/${this.props.dataPelicula.poster_path}`} alt=""/>
-            <div className='botonInfoAdicional'>
-            <a href=""><img src='/assets/img/info.png.png'/></a>
-            </div>
             <h3>{this.props.dataPelicula.title}</h3>
             <section className="aditional-info">
-                <p className="description">{this.props.dataPelicula.overview}</p>
+                <p className={`extra ${this.state.viewMore?'show':'hide'}`}>{this.props.dataPelicula.overview}</p>
                 <br/>
                 <p className={`extra ${this.state.viewMore?'show':'hide'}`}><span className={`extra ${this.state.viewMore?'show':'hide'}`}>Popularidad: </span>{this.props.dataPelicula.popularity}</p>
                 <p className={`extra ${this.state.viewMore?'show':'hide'}`}><span className={`extra ${this.state.viewMore?'show':'hide'}`}>Fecha de lanzamiento: </span>{this.props.dataPelicula.release_date}</p>
                 <p className={`extra ${this.state.viewMore?'show':'hide'}`}><span className={`extra ${this.state.viewMore?'show':'hide'}`}>Lenguaje: </span>{this.props.dataPelicula.original_language}</p>
-                <p onClick={()=>this.viewMore()}>{this.state.text}</p>
+                <div className="botonVerMas"><p className="infoAdicional" onClick={()=>this.viewMore()}>{this.state.text}</p></div>
             </section>
         </main>
     </article>

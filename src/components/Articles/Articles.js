@@ -10,6 +10,7 @@ class Articles extends Component {constructor(props) {
         isLoaded: false,
         peliculasOg : [],
         nextUrl:1,
+        // orden: "grid",
     }
 }
 
@@ -19,7 +20,7 @@ componentDidMount() {
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        this.setState({peliculas: data.results, isLoaded: true, peliculasOg: data.results, nextUrl:this.state.nextUrl+1})
+        this.setState({peliculas: data.results, isLoaded: true, peliculasOg: data.results})
     })
     .catch(e => console.log(e))
 }
@@ -32,7 +33,8 @@ addMore(){
         console.log(data)
         this.setState({
           
-            peliculas: this.state.peliculas.concat(data.results)
+            peliculas: this.state.peliculas.concat(data.results),
+            nextUrl:this.state.nextUrl+1,
         })
     })
     .catch(e => console.log(e))
@@ -59,26 +61,41 @@ filtrarPeli (PeliaFiltrar) {
 }
 
 
+// grid(){
+//     this.setState({
+//         orden: "grid",
+//     })
+// }
+
+// row(){
+//     this.setState({
+//         orden: "row",
+//     })
+// }
+
+
 render() {
   return (
       <React.Fragment>
 <div className="filtrados">
     <Formulario filtrar= { (texto) => this.filtrarPeli (texto)}  />
     <section>
-    <p>Ordenar ASC / DESC</p>
-    <i className="fas fa-th"></i>
-    <i className="fas fa-align-justify"></i>
-    
-</section>
+        <p>Ordenar ASC / DESC</p>
+        {/* <div className= {`${this.state.orden=="grid:" ? "formatoGrid": "formatoRow"}`}> */}
+            <i className="fas fa-th" onClick = {()=>this.grid()}></i>
+            <i className="fas fa-align-justify" onClick = {()=>this.row()}></i>
+        {/* </div> */}
+    </section>
 </div>
       <div className='card-container'> 
             {
         this.state.isLoaded === false ?
-        <p>Cargando...</p> :
+        <img src='/assets/img/loader.gif'></img> :
         this.state.peliculas.map((pelicula, idx)  => <Article key= {pelicula.name + idx} dataPelicula= {pelicula} 
           remove={(peliaBorrar)=>this.deleteCard(peliaBorrar)} /> )}
-             <button onClick={()=>this.addMore()}> Cargar Más Peliculas </button>
+             <button className="cargarMasPeliculas" onClick={()=>this.addMore()}> Cargar Más Peliculas </button>
       </div>
+      {/* <Articles orientacion = {this.state.orden}/> */}
       </React.Fragment>
 );
 }

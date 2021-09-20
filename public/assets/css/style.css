@@ -126,3 +126,17 @@ justify-content: flex-end;
 .botonVerMas{
     margin-right: 25px;
 }
+
+@media only screen and (max-width: 600px) {
+  .hero h1{
+    font-family: helvetica;
+    color: white;
+    font-size: 2rem;
+    /*line-height: 96px;*/
+    font-weight: bold;
+    text-align: center;
+    width: 85%;
+    
+  }
+
+}
