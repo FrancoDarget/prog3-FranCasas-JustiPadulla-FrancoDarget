@@ -9,7 +9,7 @@ class Articles extends Component {constructor(props) {
         peliculas : [],
         isLoaded: false,
         peliculasOg : [],
-        nextUrl:1,
+        nextUrl:2,
         orden: "grid",
     }
 }
